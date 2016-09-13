@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_app_name">Routine</string>
+    <string name="title_priority_dialog">Pick a priority</string>
+
+    <string name="action_add_custom_calendar">Add custom calendar</string>
+
+    <string name="button_new_series">New Custom Series</string>
+    <string name="button_cancel">Cancel</string>
+</resources>

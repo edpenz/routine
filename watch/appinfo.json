@@ -1,0 +1,24 @@
+{
+  "uuid": "ae9c2de9-dd67-4335-95ac-f0c0e757571c",
+  "shortName": "Routine",
+  "longName": "Routine Watchface",
+  "companyName": "Edward Peek",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  
+  "capabilities": [],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {},
+  "resources": {
+    "media": [
+        { "type": "font", "name": "FONT_TIME_32",
+          "file": "arialbd.ttf" },
+        { "type": "font", "name": "FONT_TIME_18",
+          "file": "arialbd.ttf" },
+        { "type": "font", "name": "FONT_TIME_12",
+          "file": "arialbd.ttf" }
+    ]
+  }
+}

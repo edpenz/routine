@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_series">Custom Series</string>
+    <integer-array name="custom_series_values">
+        <item>127</item>
+        <item>96</item>
+        <item>31</item>
+    </integer-array>
+    <string-array name="custom_series_names">
+        <item>Daily Series</item>
+        <item>Weekend Series</item>
+        <item>Workday Series</item>
+    </string-array>
+
+    <integer-array name="priority_values">
+        <item>0x13</item>
+        <item>0x12</item>
+        <item>0x11</item>
+        <item>0x10</item>
+        <item>0x00</item>
+    </integer-array>
+    <string-array name="priority_names">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+        <item>Background</item>
+        <item>Disabled</item>
+    </string-array>
+    <string-array name="priority_statuses">
+        <item>High priority</item>
+        <item>Medium priority</item>
+        <item>Low priority</item>
+        <item>Background</item>
+        <item>Disabled</item>
+    </string-array>
+    <array name="priority_drawables">
+        <item>@drawable/priority_high</item>
+        <item>@drawable/priority_medium</item>
+        <item>@drawable/priority_low</item>
+        <item>@drawable/priority_background</item>
+        <item>@drawable/priority_none</item>
+    </array>
+</resources>
