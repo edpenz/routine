@@ -37,6 +37,6 @@ dependencies {
     compile 'org.apache.commons:commons-collections4:4.0'
 
     compile 'com.getpebble:pebblekit:3.0.0'
-    compile 'com.commonsware.cwac:merge:1.1.0'
+    compile 'com.commonsware.cwac:merge:1.1.1'
     compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
 }
