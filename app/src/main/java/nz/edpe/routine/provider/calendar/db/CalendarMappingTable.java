@@ -28,7 +28,7 @@ public class CalendarMappingTable {
 
     void create() {
         mDb.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_CALENDAR_ID + " TEXT, " +
+                COLUMN_CALENDAR_ID + " INT, " +
                 COLUMN_PRIORITY + " INT);");
     }
 

@@ -18,7 +18,7 @@ public class CalendarIterable extends CursorIterable<CalendarIterable.CalendarEv
     private static final int EVENT_ALL_DAY_INDEX = 3;
 
     private static final String[] EVENT_INSTANCE_PROJECTION = new String[]{
-            CalendarContract.Instances.OWNER_ACCOUNT,
+            CalendarContract.Instances.CALENDAR_ID,
             CalendarContract.Instances.BEGIN,
             CalendarContract.Instances.END,
             CalendarContract.Instances.ALL_DAY,
@@ -46,7 +46,7 @@ public class CalendarIterable extends CursorIterable<CalendarIterable.CalendarEv
 
     @Override
     protected CalendarEvent getItem(Cursor row) {
-        String calendarId = row.getString(EVENT_CAL_ID_INDEX);
+        long calendarId = row.getLong(EVENT_CAL_ID_INDEX);
         long beginTime = row.getLong(EVENT_BEGIN_INDEX);
         long endTime = row.getLong(EVENT_END_INDEX);
         boolean allDay = (row.getInt(EVENT_ALL_DAY_INDEX) == 1);
@@ -60,14 +60,14 @@ public class CalendarIterable extends CursorIterable<CalendarIterable.CalendarEv
     }
 
     public static class CalendarEvent {
-        public final String CalendarID;
+        public final long CalendarID;
 
         public final long BeginTime;
         public final long EndTime;
 
         public final boolean IsAllDay;
 
-        public CalendarEvent(String calendarID, long beginTime, long endTime, boolean allDay) {
+        public CalendarEvent(long calendarID, long beginTime, long endTime, boolean allDay) {
             CalendarID = calendarID;
             BeginTime = beginTime;
             EndTime = endTime;

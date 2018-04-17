@@ -39,7 +39,7 @@ public class CalendarProvider extends EventScheduleProvider {
         Calendar dayEnd = (Calendar) dayBegin.clone();
         dayEnd.add(GregorianCalendar.DAY_OF_MONTH, 1);
 
-        Map<String, CalendarMappingRow> eventMapping = getMapping();
+        Map<Long, CalendarMappingRow> eventMapping = getMapping();
         CalendarIterable calendarEvents = new CalendarIterable(mContext, dayBegin, dayEnd);
 
         List<Event> mappedEvents = new ArrayList<>();
@@ -56,8 +56,8 @@ public class CalendarProvider extends EventScheduleProvider {
         return mappedEvents;
     }
 
-    private Map<String, CalendarMappingRow> getMapping() {
-        Map<String, CalendarMappingRow> mapping = new HashMap<>();
+    private Map<Long, CalendarMappingRow> getMapping() {
+        Map<Long, CalendarMappingRow> mapping = new HashMap<>();
 
         Cursor cursor = mMapping.getMappingTable().queryAll();
         try {

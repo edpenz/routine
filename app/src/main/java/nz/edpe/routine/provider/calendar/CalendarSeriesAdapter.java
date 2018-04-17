@@ -27,7 +27,6 @@ import nz.edpe.routine.provider.calendar.db.CalendarMappingTable;
 public class CalendarSeriesAdapter extends CursorAdapter {
     private static String[] CALENDAR_PROJECTION = new String[]{
             CalendarContract.Calendars._ID,
-            CalendarContract.Calendars.OWNER_ACCOUNT,
             CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,
             CalendarContract.Calendars.CALENDAR_COLOR};
 
@@ -38,7 +37,7 @@ public class CalendarSeriesAdapter extends CursorAdapter {
     private final int[] mPriorityValues;
     private final TypedArray mPriorityDrawables;
 
-    private Map<String, CalendarMappingRow> mCalendarConfigs;
+    private Map<Long, CalendarMappingRow> mCalendarConfigs;
 
     public CalendarSeriesAdapter(Context context) {
         super(context, context.getContentResolver().query(
@@ -78,9 +77,9 @@ public class CalendarSeriesAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         final ViewTag tag = (ViewTag) view.getTag();
-        tag.CalendarId = cursor.getString(1);
-        tag.CalendarName = cursor.getString(2);
-        tag.CalendarColor = cursor.getInt(3);
+        tag.CalendarId = cursor.getLong(0);
+        tag.CalendarName = cursor.getString(1);
+        tag.CalendarColor = cursor.getInt(2);
 
         CalendarMappingRow calendarConfig = mCalendarConfigs.get(tag.CalendarId);
         int priorityIndex = 0;
@@ -149,7 +148,7 @@ public class CalendarSeriesAdapter extends CursorAdapter {
 
     private static class ViewTag {
         public String CalendarName;
-        public String CalendarId;
+        public long CalendarId;
         public int CalendarColor;
 
         public final View Bullet;
